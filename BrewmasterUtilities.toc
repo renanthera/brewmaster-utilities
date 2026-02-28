@@ -1,0 +1,9 @@
+## Interface: 120001
+## Title: BrewmasterUtilities
+## Author: _renanthera
+## Notes: Brewmaster Monk Utility Addon
+
+# Versioned via https://oeis.org/A006130 starting at f(1)
+## Version: 1
+
+BrewmasterUtilities.lua
