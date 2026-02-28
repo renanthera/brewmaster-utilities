@@ -7,6 +7,6 @@
 ## Notes: Brewmaster Monk Utility Addon
 
 # Versioned via https://oeis.org/A006130 starting at f(1)
-## Version: 1
+## Version: @project-version@
 
 BrewmasterUtilities.lua
