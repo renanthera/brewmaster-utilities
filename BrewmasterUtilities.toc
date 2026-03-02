@@ -1,6 +1,5 @@
 ## X-Curse-Project-ID: 1473757
 
-
 ## Interface: 120001
 ## Title: BrewmasterUtilities
 ## Author: _renanthera
