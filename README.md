@@ -1,6 +1,6 @@
 # Brewmaster Utilities
 
-## Gift of the Ox orb Counter
+## Gift of the Ox Orb Counter
 
 - Shows Gift of the Ox orb count above a specified CDM action, by default Blackout Kick.
 - Requires Expel Harm to be on an action bar.
@@ -17,14 +17,14 @@ local update_frequency = 0.05 -- sensible default, 20 times a second. cannot be 
 ## Black Ox Statue Totem Cancel Assistant
 
 - Create a macro containing all of the following lines, or separate macros for each line.
-- All lines in one macro can result in canceling Invoke Niuzao ox as well as any other active totems.
+- All lines in one macro can result in canceling the Invoke Niuzao ox as well as any other active totems.
 ```
 /click BUTotemCancelFrame1
 /click BUTotemCancelFrame2
 /click BUTotemCancelFrame3
 /click BUTotemCancelFrame4
 ```
-Derived from Weakaura authored by Reloe.
+Derived from a Weakaura authored by Reloe.
 
 ## Contributions Welcome
 Report bugs, request features or make contributions at
