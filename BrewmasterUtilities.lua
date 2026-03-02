@@ -1,9 +1,3 @@
--- finds the first instance of anchor_id in CDM, and then anchors a Frame
--- which contains the current number of Gift of the Ox orbs to position
-
--- requirements:
---  - Expel Harm must exist on an action bar
-
 local anchor_id = 205523 -- spell id for text anchor. defaults to blackout kick (205523)
 local position = 'TOP' -- see link for possible values: https://warcraft.wiki.gg/wiki/API_ScriptRegionResizing_SetPoint
 local text_scale = 1
@@ -66,11 +60,6 @@ goto_count:SetScript("OnEvent", function (is_startup, ...)
 	holder:SetScript("OnEvent", wrapped_cb)
 end)
 
--- /click BUTotemCancelFrame1
--- /click BUTotemCancelFrame2
--- /click BUTotemCancelFrame3
--- /click BUTotemCancelFrame4
-
 local totem_assistant = CreateFrame("Frame")
 totem_assistant:RegisterEvent("PLAYER_ENTERING_WORLD")
 totem_assistant:SetScript("OnEvent", function (is_startup, ...)
@@ -78,6 +67,7 @@ totem_assistant:SetScript("OnEvent", function (is_startup, ...)
 		return
 	end
 
+	-- ported from Weakaura authored by Reloe 3fH2MR2PA
 	for i=1, MAX_TOTEMS do
 		local f = CreateFrame("Button", "BUTotemCancelFrame"..i, UIParent, "SecureUnitButtonTemplate")
 		f:SetAttribute("type", "destroytotem")

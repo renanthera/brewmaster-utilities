@@ -24,6 +24,7 @@ local update_frequency = 0.05 -- sensible default, 20 times a second. cannot be 
 /click BUTotemCancelFrame3
 /click BUTotemCancelFrame4
 ```
+Derived from Weakaura authored by Reloe.
 
 ## Contributions Welcome
 Report bugs, request features or make contributions at
