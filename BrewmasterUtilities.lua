@@ -25,16 +25,15 @@ function find_frame(name)
    end
 end
 
-local addon = CreateFrame("Frame")
-addon:RegisterEvent("PLAYER_ENTERING_WORLD")
-addon:SetScript("OnEvent", function (is_startup, ...)
+local goto_count = CreateFrame("Frame")
+goto_count:RegisterEvent("PLAYER_ENTERING_WORLD")
+goto_count:SetScript("OnEvent", function (is_startup, ...)
 	if not is_startup then
 		return
 	end 
 	
 	local frame
 	for i, name in ipairs(CDM_FRAMES) do
-	   print(name)
 	   frame = find_frame(name)
 	   if frame then
 		  break
@@ -49,7 +48,7 @@ addon:SetScript("OnEvent", function (is_startup, ...)
 
 	function cb(...)
 		local ab = C_ActionBar.FindSpellActionButtons(322101)
-		if #ab then
+		if ab and #ab then
 			local value = C_ActionBar.GetActionDisplayCount(ab[1])
 			fs:SetText(value)
 		end
@@ -67,5 +66,21 @@ addon:SetScript("OnEvent", function (is_startup, ...)
 	holder:SetScript("OnEvent", wrapped_cb)
 end)
 
+-- /click BUTotemCancelFrame1
+-- /click BUTotemCancelFrame2
+-- /click BUTotemCancelFrame3
+-- /click BUTotemCancelFrame4
 
+local totem_assistant = CreateFrame("Frame")
+totem_assistant:RegisterEvent("PLAYER_ENTERING_WORLD")
+totem_assistant:SetScript("OnEvent", function (is_startup, ...)
+	if not is_startup then
+		return
+	end
 
+	for i=1, MAX_TOTEMS do
+		local f = CreateFrame("Button", "BUTotemCancelFrame"..i, UIParent, "SecureUnitButtonTemplate")
+		f:SetAttribute("type", "destroytotem")
+		f:SetAttribute("totem-slot", i)
+	end
+end)
